@@ -19,7 +19,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t kingacr.azurecr.io/devops-portfolio:latest .
+           docker build -t kingacr.azurecr.io/devops-portfolio:latest -f dockerfile ..
 
       - name: Push Docker image to ACR
         run: |
