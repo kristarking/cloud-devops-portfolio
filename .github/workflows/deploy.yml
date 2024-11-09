@@ -41,8 +41,9 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Set up kubectl
-        uses: azure/setup-kubectl@v1
+      - name: Set AKS credentials
+        run: |
+            az aks get-credentials --resource-group KingRG --name DevOpsCluster --admin
 
       - name: Deploy to AKS
         run: |
